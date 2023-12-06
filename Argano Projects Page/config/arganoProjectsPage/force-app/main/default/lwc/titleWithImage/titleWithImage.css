@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white; 
+}
+
+.image-container {
+    margin-right: 20px;
+}
+
+.left-image {
+    max-width: 100px; 
+    width: 100%; 
+    height: auto;
+}
+
+.text-container {
+    text-align: center;
+    flex-grow: 1; 
+    text-align: left; 
+}
+
+.title {
+    font-family: 'Salesforce Sans', sans-serif;
+    font-size: 36px; 
+    margin: 0; 
+}

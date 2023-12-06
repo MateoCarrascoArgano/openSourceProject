@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Open Source Project Form">
+        <div class="slds-m-around_medium">
+            <form submit={submitHandler}>
+                <lightning-card title="Submit your Project!">
+                    <div class="slds-p-around_medium">
+                        <lightning-input label="Name" value={personName} onchange={handlePersonNameChange}></lightning-input>
+                        <lightning-input label="Project Name" value={projectName} onchange={handleProjectNameChange}></lightning-input>
+                        <lightning-input label="Description" value={description} onchange={handleDescriptionChange}></lightning-input>
+                        <lightning-input label="GitHub URL" value={githubLink} onchange={handleGithubLinkChange}></lightning-input>
+                        <lightning-input label="Image URL" value={imageUrl} onchange={handleImageUrlChange}></lightning-input>
+                    </div>
+                </lightning-card>
+                <lightning-button
+                    variant="brand"
+                    type="submit"
+                    label="Submit"
+                    title="Submit Quiz"
+                    class="slds-m-around_small"
+                    disabled={allFieldsCompleted}></lightning-button>
+                <lightning-button
+                    variant="brand"
+                    type="reset"
+                    label="Reset"
+                    title="Reset Submission"
+                    onclick={resetHandler}
+                    class="slds-m-around_small"></lightning-button>
+            </form>
+            <template if:true={isSubmitted}>
+                <div>You have Submitted your project correctly</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

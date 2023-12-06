@@ -1,0 +1,59 @@
+:host {
+    display: flex;
+    justify-content: center;
+}
+
+:host .card-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+:host .project-details {
+    text-align: center;
+    margin: 20px;
+}
+
+:host .image-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+:host .image-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el título y descripción */
+:host .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+:host .description {
+    text-align: left;
+    max-height: calc(1.2em * 3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.detailProject-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff8000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

@@ -1,0 +1,20 @@
+.container {
+    text-align: left;
+    padding: 15px;
+    background-color: white; 
+}
+
+.title {
+    font-family: 'Salesforce Sans', sans-serif;
+    font-size: 16px; 
+    margin-bottom: 15px; 
+}
+
+.formPage-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff8000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

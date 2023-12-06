@@ -1,0 +1,18 @@
+<template>
+    <div class="container">
+        <div class="card-container">
+            <div class="project-details">
+                <div class="image-container">
+                    <img src={projectImage} alt="Project Image">
+                </div>
+                <h2 class="title">{projectTitle}</h2>
+                <div class="description-container">
+                    <p class="description">{truncatedDescription}</p>
+                </div>
+                <template if:true={showDetailsButton}>
+                    <a href="https://arganotest2-dev-ed.develop.lightning.force.com/lightning/n/Detail_Page" class="detailProject-link">Submit your Project</a>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>
