@@ -1,34 +1,72 @@
 <template>
-    <lightning-card title="Open Source Project Form">
+    <lightning-card title="Share Your Unique Open Source Project!">
         <div class="slds-m-around_medium">
-            <form submit={submitHandler}>
-                <lightning-card title="Submit your Project!">
-                    <div class="slds-p-around_medium">
-                        <lightning-input label="Name" value={personName} onchange={handlePersonNameChange}></lightning-input>
-                        <lightning-input label="Project Name" value={projectName} onchange={handleProjectNameChange}></lightning-input>
-                        <lightning-input label="Description" value={description} onchange={handleDescriptionChange}></lightning-input>
-                        <lightning-input label="GitHub URL" value={githubLink} onchange={handleGithubLinkChange}></lightning-input>
-                        <lightning-input label="Image URL" value={imageUrl} onchange={handleImageUrlChange}></lightning-input>
+            <div class="slds-text-heading_large">
+                <span style="font-size: 20px;">Hey there!</span>
+
+                <p class="slds-text-body_regular">
+                    🚀 We're on the lookout for extraordinary open source projects! If you've got a unique project that hasn't made its way onto our platform yet, we'd love to showcase it.
+                </p>
+                
+                <p class="slds-text-body_regular">
+                    🌟 Share the amazing work you've been doing! Whether it's a tool, library, app, or anything in between, if it's open source and hasn't been featured here, we're eager to see it.
+                </p>
+                
+                <p class="slds-text-body_regular">
+                    ✨ Don't miss this chance to introduce your project to our community. Your innovation might just inspire others!
+                </p>
+                
+                <p class="slds-text-body_regular">
+                    📝 Fill out the form below and let us know about your project. We can't wait to explore and potentially feature it among the brilliant projects in our collection.
+                </p>
+
+                <div style="text-align: left; margin-bottom: 20px;">
+                    <img src="https://static.vecteezy.com/system/resources/previews/023/404/810/original/3d-orange-robot-character-png.png" alt="Robot Image" style="max-width: 100%; max-height: 200px;">
+                </div>
+
+                <form onsubmit={submitHandler}>
+                    <lightning-card title="Share you creation!">
+                        <div class="slds-p-around_medium">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-2 slds-p-around_small">
+                                    <lightning-input label="Project Name" value={projectName} onchange={handleProjectNameChange} style="font-size: 12px;"></lightning-input>
+                                </div>
+                                <div class="slds-size_1-of-2 slds-p-around_small">
+                                    <lightning-input label="Description" value={description} onchange={handleDescriptionChange} style="font-size: 12px;"></lightning-input>
+                                </div>
+                                <div class="slds-size_1-of-2 slds-p-around_small">
+                                    <lightning-input label="GitHub URL" value={githubLink} onchange={handleGithubLinkChange} pattern="https?://.+" style="font-size: 12px;"></lightning-input>
+                                </div>
+                                <div class="slds-size_1-of-2 slds-p-around_small">
+                                    <lightning-input label="Image URL" value={imageUrl} onchange={handleImageUrlChange} pattern="https?://.+" style="font-size: 12px;"></lightning-input>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-card>
+                    <div class="slds-m-around_medium">
+                        <lightning-button
+                            variant="brand"
+                            type="submit"
+                            title="Submit Quiz"
+                            label="Submit"
+                            disabled={isSubmitButtonDisabled}
+                            class="slds-m-right_x-small"
+                            style="font-size: 16px;">
+                        </lightning-button>
+                        <lightning-button
+                            variant="brand"
+                            type="reset"
+                            title="Reset Submission"
+                            label="Reset"
+                            onclick={resetHandler}
+                            style="font-size: 16px;">
+                        </lightning-button>
                     </div>
-                </lightning-card>
-                <lightning-button
-                    variant="brand"
-                    type="submit"
-                    label="Submit"
-                    title="Submit Quiz"
-                    class="slds-m-around_small"
-                    disabled={allFieldsCompleted}></lightning-button>
-                <lightning-button
-                    variant="brand"
-                    type="reset"
-                    label="Reset"
-                    title="Reset Submission"
-                    onclick={resetHandler}
-                    class="slds-m-around_small"></lightning-button>
-            </form>
-            <template if:true={isSubmitted}>
-                <div>You have Submitted your project correctly</div>
-            </template>
+                </form>
+                <template if:true={isSubmitted}>
+                    <div>You have Submitted your project correctly</div>
+                </template>
+            </div>
         </div>
     </lightning-card>
 </template>
